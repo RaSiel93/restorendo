@@ -1,0 +1,14 @@
+default: &default
+  adapter: postgresql
+  encoding: unicode
+  user: rasiel
+  password: postgres
+  pool: 5
+
+development:
+  <<: *default
+  database: restorendo_development
+
+test:
+  <<: *default
+  database: restorendo_test

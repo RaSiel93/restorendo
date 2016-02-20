@@ -1,0 +1,15 @@
+
+- if restaurant_signed_in?
+  = link_to 'Sign out', destroy_restaurant_session_path, method: :delete
+- else
+  = link_to 'Sign in', new_restaurant_session_path
+
+br
+br
+= link_to 'Edit Restaurant', edit_restaurant_path(current_restaurant)
+h1 = current_restaurant.name
+h2 Categories:
+ul
+  - current_restaurant.categories.each do |category|
+    li = link_to category.name, restaurant_category_path(current_restaurant, category)
+= link_to 'Add category', new_restaurant_category_path(current_restaurant)

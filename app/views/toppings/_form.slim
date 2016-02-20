@@ -1,0 +1,5 @@
+= form_for [current_restaurant, @category, @dish, @topping] do |f|
+  = f.text_field :name
+  = f.text_field :price
+  = f.hidden_field :dish_id
+  = f.submit

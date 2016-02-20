@@ -1,0 +1,13 @@
+= link_to 'Back', restaurant_category_dish_path(current_restaurant, @category, @dish)
+br
+br
+= link_to 'Edit', edit_restaurant_category_dish_topping_path(current_restaurant, @category, @dish, @topping)
+h1
+  = @topping.name
+  '  |
+  = @topping.price
+  ' $
+
+/ ul
+/   - @dish.dishes.each do |dish|
+/     li = link_to dish.name, edit_restaurant_category_dish_path(current_restaurant, @dish, dish)

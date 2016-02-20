@@ -1,0 +1,6 @@
+= form_for [current_restaurant, @category, @dish], html: { multipart: true } do |f|
+  = f.text_field :name
+  = f.text_field :price
+  = f.file_field :image
+  = f.hidden_field :category_id
+  = f.submit

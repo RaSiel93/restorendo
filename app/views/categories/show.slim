@@ -1,0 +1,18 @@
+= link_to 'Back', restaurant_path(current_restaurant)
+br
+br
+= link_to 'Edit', edit_restaurant_category_path(current_restaurant, @category)
+'  |
+= link_to 'Delete', restaurant_category_path(current_restaurant, @category), method: :delete
+br
+br
+= link_to 'Add Dish', new_restaurant_category_dish_path(current_restaurant, @category)
+h1 = @category.name
+h2 Dishes:
+ul
+  - @category.dishes.each do |dish|
+    li
+      = link_to dish.name, restaurant_category_dish_path(current_restaurant, @category, dish)
+      '
+      = dish.price
+      ' $

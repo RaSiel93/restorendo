@@ -1,0 +1,23 @@
+= link_to 'Back', restaurant_category_path(current_restaurant, @category)
+br
+br
+= link_to 'Edit', edit_restaurant_category_dish_path(current_restaurant, @category, @dish)
+'  |
+= link_to 'Delete', restaurant_category_dish_path(current_restaurant, @category, @dish), method: :delete
+br
+br
+= link_to 'Add Topping', new_restaurant_category_dish_topping_path(current_restaurant, @category, @dish)
+h1
+  = @dish.name
+  '  |
+  = @dish.price
+  ' $
+  = image_tag @dish.image.url(:medium)
+
+ul
+  - @dish.toppings.each do |topping|
+    li
+      = topping.name
+      '
+      = topping.price
+      ' $
